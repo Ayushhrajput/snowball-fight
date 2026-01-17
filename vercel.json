@@ -1,12 +1,5 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "max-age=0" }
-      ]
-    }
-  ]
+  "builds": [{ "src": "index.html", "use": "@vercel/static" }],
+  "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
 }
+
