@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.map {
+    width: 1400px;
+    height: 800px;
+    background: url(./public/map.jpg) no-repeat;
+    background-size: contain;
+    position: relative;
+}
+.layout {
+    width: 1400px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.layout div {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+}
+.santa {
+    background: url(./public/santaClaus.png);
+    background-size: contain;
+}
+.santaBack {
+    background: url(./public/santaClaus.png);
+    background-size: contain;
+    transform: scaleX(-1);  
+}
+.santaTop {
+    background: url(./public/santaClaus.png);
+    background-size: contain;
+    transform: rotate(270deg);
+}
+.santaDown {
+    background: url(./public/santaClaus.png);
+    background-size: contain;
+    transform: rotate(90deg);
+}
+
+.tree {
+    display: inline;
+}
+.console {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.1);
+    top: calc(70vh);
+    left: 10vh;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 4px rgb(255, 255, 255, 0.1);
+    
+}
+.console i {
+    color: white;
+    font-size: 2rem;
+}
+.top {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+}
+.right {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%) rotate(270deg);
+}
+.down {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.left {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%) rotate(90deg);
+}
+.throw {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.1);
+    top: calc(75vh);
+    left: 75vw;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 4px rgb(255, 255, 255, 0.1);
+    display: flex;
+    
+}
+.snowball {
+    background: url(./public/snowball.png);
+    background-size: contain;
+}
