@@ -1,7 +1,7 @@
 const layout = document.querySelector('.layout')
 const width = 35;
 const height = 20;
-
+const throwSnow = document.querySelector('.throw img')
 const topMove = document.querySelector('.top')
 const rightMove = document.querySelector('.right')
 const downMove = document.querySelector('.down')
@@ -151,30 +151,35 @@ let snowballInterval;
 
 
 
+let snowballIdx;
+function moveSnowball(snowballIdx) {
+    snowballIdx =  SantaIndex
+    squares[snowballIdx].classList.remove('snowball')
+    if(santaPos == 'santa'){
+        snowballIdx += 1
+        squares[snowballIdx].classList.add('snowball')
+    } else if(santaPos == 'santaTop'){
+        snowballIdx -= width;
+        squares[snowballIdx].classList.add('snowball')
+    } else if(santaPos == 'santaBack'){
+        snowballIdx -= 1
+        squares[snowballIdx].classList.add('snowball')
+    } else if(santaPos == 'santaDown'){
+        snowballIdx += width
+        squares[snowballIdx].classList.add('snowball')
+    }
+}
 function throwSnowBall(e){
     if(e.key === 'ArrowUp'){
-        function moveSnowball() {
-            let snowballIdx =  SantaIndex
-            squares[snowballIdx].classList.remove('snowball')
-            if(santaPos == 'santa'){
-                snowballIdx += 1
-                squares[snowballIdx].classList.add('snowball')
-            } else if(santaPos == 'santaTop'){
-                snowballIdx -= width;
-                squares[snowballIdx].classList.add('snowball')
-            } else if(santaPos == 'santaBack'){
-                snowballIdx -= 1
-                squares[snowballIdx].classList.add('snowball')
-            } else if(santaPos == 'santaDown'){
-                snowballIdx += width
-                squares[snowballIdx].classList.add('snowball')
-            }
-        }
-        clearInterval(snowballInterval)
-        snowballInterval = setInterval(() => {
-            moveSnowball();
-        }, 100);
+        moveSnowball(snowballIdx);
     }
-    squares[snowballIdx].classList.add('snowball')
+    
 }
 document.addEventListener('keydown', throwSnowBall)
+throwSnow.addEventListener('click',  () => {
+    
+    moveSnowball(snowballIdx)
+    
+    
+    
+})

@@ -7,7 +7,7 @@ body {
     width: 1400px;
     height: 800px;
     background: url(./map.jpg) no-repeat;
-    background-size: contain;
+    background-size: cover;
     position: relative;
 }
 .layout {
@@ -49,7 +49,7 @@ body {
     width: 120px;
     height: 120px;
     background: rgba(0, 0, 0, 0.1);
-    top: calc(70vh);
+    top: calc(80vh);
     left: 10vh;
     border-radius: 50%;
     border: 1px solid rgb(255, 255, 255, 0.4);
@@ -90,16 +90,25 @@ body {
     width: 80px;
     height: 80px;
     background: rgba(0, 0, 0, 0.1);
-    top: calc(75vh);
-    left: 75vw;
+    top: calc(85vh);
+    right: 10vh;
     border-radius: 50%;
     border: 1px solid rgb(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     box-shadow: 4px 4px 4px rgb(255, 255, 255, 0.1);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    
     
 }
+.throw img {
+    width: 40px;
+    object-fit: contain;
+}
 .snowball {
-    background: url(./snowball.png);
-    background-size: contain;
+    background: url(./snowball.png) no-repeat center;
+    background-size: 1rem;
+
+    
 }
