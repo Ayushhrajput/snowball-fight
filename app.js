@@ -373,7 +373,7 @@ function moveComputerSanta() {
             }, 400);
         }, 100);
     }
-    if(squares[computerIdx].classList.contains('snowball')){
+    if(squares[computerIdx].classList.contains('snowball') || squares[computerIdx+1].classList.contains('snowball') || squares[computerIdx-1].classList.contains('snowball') || squares[computerIdx+width].classList.contains('snowball') || squares[computerIdx-width].classList.contains('snowball')){
         clearInterval(moveComputerInterval)
         res.classList.add('showRes')
         removeComputerSanta()
