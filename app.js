@@ -6,6 +6,8 @@ const topMove = document.querySelector('.top')
 const rightMove = document.querySelector('.right')
 const downMove = document.querySelector('.down')
 const leftMove = document.querySelector('.left')
+const reload = document.querySelector('.reload')
+
 
 for(let i=0; i<width*height; i++){
     const square = document.createElement('div')
@@ -152,6 +154,9 @@ let snowballInterval;
 
 
 let snowballIdx;
+reload.addEventListener('click', () => {
+    location.reload(true);
+})
 function moveSnowball(snowballIdx) {
     snowballIdx =  SantaIndex
     squares[snowballIdx].classList.remove('snowball')
