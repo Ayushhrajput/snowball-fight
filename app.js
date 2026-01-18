@@ -149,42 +149,84 @@ leftMove.addEventListener('click', ()=> {
 })
 document.addEventListener('keydown', moveSanta)
 
-let snowballInterval;
-
-
-
 let snowballIdx;
 reload.addEventListener('click', () => {
     location.reload(true);
 })
 function moveSnowball(snowballIdx) {
     snowballIdx =  SantaIndex
-    squares[snowballIdx].classList.remove('snowball')
     if(santaPos == 'santa'){
-        snowballIdx += 1
-        squares[snowballIdx].classList.add('snowball')
+        function moveSnow() {
+            squares[snowballIdx].classList.remove('snowball')
+            snowballIdx += 1
+            squares[snowballIdx].classList.add('snowball')
+        }
+        let snowballInterval =setInterval(() => {
+            moveSnow()
+
+        }, 100);
+        setTimeout(() => {
+            clearInterval(snowballInterval)
+            squares[snowballIdx].classList.remove('snowball')
+
+        }, 600);
     } else if(santaPos == 'santaTop'){
-        snowballIdx -= width;
+        function moveSnow() {
+            squares[snowballIdx].classList.remove('snowball')
+            snowballIdx -= width;
+            squares[snowballIdx].classList.add('snowball')
+        }
+        let snowballInterval =setInterval(() => {
+            moveSnow()
+            
+        }, 100);
+        setTimeout(() => {
+            clearInterval(snowballInterval)
+            squares[snowballIdx].classList.remove('snowball')
+        }, 600);
+        
         squares[snowballIdx].classList.add('snowball')
     } else if(santaPos == 'santaBack'){
+        function moveSnow() {
+            squares[snowballIdx].classList.remove('snowball')
+            snowballIdx -= 1;
+            squares[snowballIdx].classList.add('snowball')
+        }
+        let snowballInterval =setInterval(() => {
+            moveSnow()
+            
+        }, 100);
+        setTimeout(() => {
+            clearInterval(snowballInterval)
+            squares[snowballIdx].classList.remove('snowball')
+        }, 600);
         snowballIdx -= 1
         squares[snowballIdx].classList.add('snowball')
     } else if(santaPos == 'santaDown'){
-        snowballIdx += width
+        function moveSnow() {
+            squares[snowballIdx].classList.remove('snowball')
+            snowballIdx += width
+            squares[snowballIdx].classList.add('snowball')
+        }
+        let snowballInterval =setInterval(() => {
+            moveSnow()
+            
+        }, 100);
+        setTimeout(() => {
+            clearInterval(snowballInterval)
+            squares[snowballIdx].classList.remove('snowball')
+        }, 600);
         squares[snowballIdx].classList.add('snowball')
     }
+    
 }
 function throwSnowBall(e){
     if(e.key === 'ArrowUp'){
         moveSnowball(snowballIdx);
-    }
-    
+    }  
 }
 document.addEventListener('keydown', throwSnowBall)
 throwSnow.addEventListener('click',  () => {
     
-    moveSnowball(snowballIdx)
-    
-    
-    
+    moveSnowball(snowballIdx)  
 })
