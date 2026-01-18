@@ -164,21 +164,45 @@ function moveSanta(e){
 topMove.addEventListener('click', ()=> {
     
     santaIdx()
-    moveTop()
+    let moveTopInterval = setInterval(() => {
+        santaIdx()
+        moveTop();
+    }, 60);
+    setTimeout(() => {
+        clearInterval(moveTopInterval)
+    }, 240);
 })
 rightMove.addEventListener('click', ()=> {
     santaIdx()
-    moveRight()
+    let moveRightInterval = setInterval(() => {
+        santaIdx()
+        moveRight();
+    }, 60);
+    setTimeout(() => {
+        clearInterval(moveRightInterval)
+    }, 240);
     
 })
 downMove.addEventListener('click', ()=> {
     santaIdx()
-    moveDown()
+    let moveDownInterval = setInterval(() => {
+        santaIdx()
+        moveDown();
+    }, 60);
+    setTimeout(() => {
+        clearInterval(moveDownInterval)
+    }, 240);
     
 })
 leftMove.addEventListener('click', ()=> {
     santaIdx()
-    moveLeft()
+    let moveBackInterval = setInterval(() => {
+        santaIdx()
+        moveLeft();
+    }, 60);
+    setTimeout(() => {
+        clearInterval(moveBackInterval)
+    }, 240);
 })
 document.addEventListener('keydown', moveSanta)
 
@@ -203,12 +227,12 @@ function moveSnowball(snowballIdx) {
         let snowballInterval =setInterval(() => {
             moveSnow()
 
-        }, 60);
+        }, 40);
         setTimeout(() => {
             clearInterval(snowballInterval)
             squares[snowballIdx].classList.remove('snowball')
 
-        }, 600);
+        }, 800);
     } else if(santaPos == 'santaTop'){
         snowballIdx -= width;
         function moveSnow() {
@@ -222,11 +246,11 @@ function moveSnowball(snowballIdx) {
         let snowballInterval =setInterval(() => {
             moveSnow()
             
-        }, 60);
+        }, 40);
         setTimeout(() => {
             clearInterval(snowballInterval)
             squares[snowballIdx].classList.remove('snowball')
-        }, 600);
+        }, 800);
         
         squares[snowballIdx].classList.add('snowball')
     } else if(santaPos == 'santaBack'){
@@ -244,11 +268,11 @@ function moveSnowball(snowballIdx) {
         let snowballInterval =setInterval(() => {
             moveSnow()
             
-        }, 60);
+        }, 40);
         setTimeout(() => {
             clearInterval(snowballInterval)
             squares[snowballIdx].classList.remove('snowball')
-        }, 600);
+        }, 800);
         snowballIdx -= 1
         squares[snowballIdx].classList.add('snowball')
     } else if(santaPos == 'santaDown'){
@@ -264,11 +288,11 @@ function moveSnowball(snowballIdx) {
         let snowballInterval =setInterval(() => {
             moveSnow()
             
-        }, 60);
+        }, 40);
         setTimeout(() => {
             clearInterval(snowballInterval)
             squares[snowballIdx].classList.remove('snowball')
-        }, 600);
+        }, 800);
         squares[snowballIdx].classList.add('snowball')
     }
     
