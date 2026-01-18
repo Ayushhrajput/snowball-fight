@@ -20,7 +20,6 @@ body {
     width: 20px;
     height: 20px;
     box-sizing: border-box;
-    border: 1px solid blue;
 }
 .santa {
     background: url(./santaClaus.png);
@@ -38,7 +37,6 @@ body {
     background: url(./santaClaus.png);
     background-size: contain;
     transform: rotate(270deg) scale(4);
-    
 }
 .santaDown {
     background: url(./santaClaus.png);

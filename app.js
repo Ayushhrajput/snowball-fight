@@ -123,16 +123,40 @@ function moveSanta(e){
     santaIdx()
 
     if(e.key === 'w') {
-        moveTop();
+        let moveTopInterval = setInterval(() => {
+            santaIdx()
+            moveTop();
+        }, 60);
+        setTimeout(() => {
+            clearInterval(moveTopInterval)
+        }, 240);
     } 
     else if(e.key === 's') {
-        moveDown();
+        let moveDownInterval = setInterval(() => {
+            santaIdx()
+            moveDown();
+        }, 60);
+        setTimeout(() => {
+            clearInterval(moveDownInterval)
+        }, 240);
     } 
     else if(e.key === 'a') {
-        moveLeft();
+        let moveBackInterval = setInterval(() => {
+            santaIdx()
+            moveLeft();
+        }, 60);
+        setTimeout(() => {
+            clearInterval(moveBackInterval)
+        }, 240);
     }
     else if(e.key === 'd') {
-        moveRight();
+        let moveRightInterval = setInterval(() => {
+            santaIdx()
+            moveRight();
+        }, 60);
+        setTimeout(() => {
+            clearInterval(moveRightInterval)
+        }, 240);
     } 
     squares[SantaIndex].classList.add(santaPos)
 
